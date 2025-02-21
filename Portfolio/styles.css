@@ -24,18 +24,54 @@ body p {
 }
 
 /* Header Section */
-span {
-    display: block;
-}
 header {
-    display: flex;
-    justify-content: space-between;
     background-color: white;
     padding: 1.5rem;
     box-shadow: 0 0 2px rgb(74, 74, 74);
 }
 header h2 {
     font-size: 1.3rem;
+}
+.nav-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.nav-header button {
+    background-color: white;
+    border: none;
+    font-size: 1.8rem;
+}
+.nav-menu {
+    display: none;
+    z-index: 1000;
+    background-color: var(--background-color);
+    position: fixed;
+    right: 0;
+    top: 0;
+    height: 100vh;
+    width: 70%;
+}
+.nav-menu button {
+    background-color: var(--background-color);
+    border: none;
+    font-size: 1.8rem;
+    padding: 5px;
+}
+.li-container {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    font-size: 1.2rem;
+    margin-top: 9rem;
+    font-weight: bold;
+}
+.nav-menu a {
+    text-decoration: none;
+    color: black;
 }
 
 /* Introduction Section */
@@ -122,7 +158,7 @@ header h2 {
     gap: 1rem;
 }
 .toolkit h3 {
-    text-decoration: underline;
+    text-decoration: none;
     font-size: 1rem;
     font-weight: 500;
     color: var(--secondary-text-color);
@@ -216,6 +252,7 @@ header h2 {
     padding: 5px;
     border-radius: 5px;
     border: none;
+    width: 100%;
 }
 .form button:hover {
     background-color: var(--hover-color);
@@ -231,4 +268,88 @@ footer {
 }
 footer p, a {
     color: white;
+}
+
+/* tablet and large phones break point */
+@media all and (min-width: 500px) {
+    /* Start with nav menu */
+    .nav-container {
+        padding: 0 2rem;
+      }
+    
+      /* Layout improvements */
+      .container {
+        max-width: 700px;
+        margin: 0 auto;
+        padding: 0 2rem;
+      }
+    
+      .introduction-h2 h2 {
+        font-size: 2.2rem;
+      }
+    
+      /* About section improvements */
+      .about-me {
+        border-radius: 8px;
+        margin: 2rem 0;
+      }
+}
+
+@media all and (min-width: 768px) {
+    .container {
+        max-width: 800px;
+        padding-top: 2rem;
+    }
+    .hero-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 2.5rem;
+    }
+    .image-container img {
+        max-height: 35rem;
+        max-width: 35rem;
+    }
+    .image-container button {
+        display: none;
+    }
+    .introduction-h2 h2 {
+        font-size: 2rem;
+    }
+
+}
+
+/* Desktop */
+@media all and (min-width: 968px) {
+    .container {
+        max-width: 900px;
+    }
+    .nav-container {
+        padding: 0.9rem;
+    }
+    .nav-menu {
+        width: 60%;
+    }
+    .toolkit h3 {
+        font-size: 1.2rem;
+    }
+    .toolkit img {
+        width: 3rem;
+    height: 3rem;
+    }
+    .projects p {
+        padding: 10rem 0rem;
+    }
+    .form h3 {
+        font-size: 1.5rem;
+    }
+    .form p {
+        font-size: 1rem;
+    }
+}
+
+@media all and (min-width: 1100px) {
+    .nav-menu {
+        width: 40%;
+    }
 }
